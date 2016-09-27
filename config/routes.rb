@@ -13,4 +13,6 @@ Rails.application.routes.draw do
    get '/' => 'links#index'
    get '/links/new' => 'links#new'
    post '/links/create' => 'links#create'
+
+   get '/:slug' => 'visits#create'
 end
