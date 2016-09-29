@@ -4,13 +4,15 @@ class LinksController < ApplicationController
   end
 
   def new
+    @link = Link.new
   end
 
   def create
     @link = Link.create(
                         slug: params[:slug],
-                        target_url: params[:target_url]
+                        target_url: params[:target_url],
+                        user_id: current_user.id
                         )
-    redirct_to '/'
+    redirect_to '/'
   end
 end

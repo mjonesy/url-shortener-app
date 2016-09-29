@@ -4,7 +4,7 @@ class VisitsController < ApplicationController
 
     @visit = Visit.create(
                           link_id: @link.id,
-                          times_viewed: self.times_viewed + 1
+                          ip_address: request.remote_ip
                           )
     
     redirect_to "http://#{@link.target_url}"
